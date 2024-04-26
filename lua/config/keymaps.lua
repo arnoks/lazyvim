@@ -16,3 +16,9 @@ vim.api.nvim_set_keymap("i", "kj", "<ESC>", { noremap = true }) -- left hand esc
 
 -- Telescope keymaps
 vim.api.nvim_set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>ve", "<cmd>edit $MYVIMRC<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>vs", "<cmd>luafile %<cr>", { noremap = true })
+
+-- call make for current file
+vim.api.nvim_set_keymap("n", "<F5>", "<cmd>make run<cr>", { noremap = true })
