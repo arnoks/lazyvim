@@ -14,6 +14,11 @@ vim.api.nvim_set_keymap("i", "<c-k>", 'copilot#Cancel("<cr>")', { noremap = true
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true }) -- left hand escape
 vim.api.nvim_set_keymap("i", "kj", "<ESC>", { noremap = true }) -- left hand escape
 
+-- Telescope for keymaps, tags and oldfiles
+vim.api.nvim_set_keymap("n", "<leader>tk", ":Telescope keymaps<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tt", ":Telescope tags<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>to", ":Telescope oldfiles<cr>", { noremap = true })
+
 -- Telescope keymaps
 vim.api.nvim_set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>", { noremap = true })
 
@@ -22,3 +27,10 @@ vim.api.nvim_set_keymap("n", "<leader>vs", "<cmd>luafile %<cr>", { noremap = tru
 
 -- call make for current file
 vim.api.nvim_set_keymap("n", "<F5>", "<cmd>make run<cr>", { noremap = true })
+
+vim.api.nvim_set_keymap("i", "<c-j>", 'copilot#Accept("<cr>")', { noremap = true, expr = true, silent = true })
+
+-- zettelkasten
+vim.api.nvim_set_keymap("n", "<leader>zn", ":ZkNew<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>zb", ":e Zk://browser<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>zt", ":!catgs ~*.md<cr>", { noremap = true })

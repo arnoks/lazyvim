@@ -7,40 +7,17 @@ if true then return {
   },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-
+  {
+    "Furkanzmc/zettelkasten.nvim",
+    opts = {
+      notes_path = "/home/vn401/zettelkasten",
+    }
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
-    },
-  },
-
-   -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {
-          
-        },
-      },
-    },
-  },
-
-   -- add gopls to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- gopls will be automatically installed with mason and loaded with lspconfig
-        gopls = {},
-      },
     },
   },
 
@@ -62,9 +39,7 @@ if true then return {
     opts = {
       ensure_installed = {
         "bash",
-        "help",
         "html",
-        "javascript",
         "json",
         "lua",
         "markdown",
@@ -72,8 +47,6 @@ if true then return {
         "python",
         "query",
         "regex",
-        "tsx",
-        "typescript",
         "vim",
         "yaml",
         "terraform",
