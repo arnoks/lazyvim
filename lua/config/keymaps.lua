@@ -6,21 +6,11 @@ vim.api.nvim_set_keymap("n", "ö", "gf", { noremap = true }) -- öffne Datei
 vim.api.nvim_set_keymap("n", "Ö", "<C-]>", { noremap = true }) -- Öffne verweis
 
 -- Search using F2
-vim.api.nvim_set_keymap("n", "<F2>", "<cmd>Telescope live_grep<cr>", { noremap = true })
-
 vim.api.nvim_set_keymap("i", "<c-j>", 'copilot#Accept("<cr>")', { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("i", "<c-k>", 'copilot#Cancel("<cr>")', { noremap = true, expr = true, silent = true })
 
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true }) -- left hand escape
 vim.api.nvim_set_keymap("i", "kj", "<ESC>", { noremap = true }) -- left hand escape
-
--- Telescope for keymaps, tags and oldfiles
-vim.api.nvim_set_keymap("n", "<leader>tk", ":Telescope keymaps<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tt", ":Telescope tags<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>to", ":Telescope oldfiles<cr>", { noremap = true })
-
--- Telescope keymaps
-vim.api.nvim_set_keymap("n", "<leader>k", "<cmd>Telescope keymaps<cr>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<leader>ve", "<cmd>edit $MYVIMRC<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>vs", "<cmd>luafile %<cr>", { noremap = true })
@@ -32,5 +22,18 @@ vim.api.nvim_set_keymap("i", "<c-j>", 'copilot#Accept("<cr>")', { noremap = true
 
 -- zettelkasten
 vim.api.nvim_set_keymap("n", "<leader>zn", ":ZkNew<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>zb", ":e Zk://browser<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>zt", ":!catgs ~*.md<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>zb", ":ZkBrowse<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>zt", ":!ctags *.md<cr>", { noremap = true })
+
+-- FzfLua
+vim.api.nvim_set_keymap("n", "<leader>Fo", ":FzfLua oldfiles <cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>Fb", ":FzfLua buffers <cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>Ft", ":FzfLua tags <cr>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>de", "<cmd> DapEval <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F9>", "<cmd> DapContinue <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F10>", "<cmd> DapDisconnect <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F2>", "<cmd> DapStepOut  <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F3>", "<cmd> DapStepOver <CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F4>", "<cmd> DapStepInto <CR>", { noremap = true })
